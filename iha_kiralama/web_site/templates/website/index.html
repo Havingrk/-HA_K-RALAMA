@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+{% endblock %}
+
+
+{% block title %} Homepage {% endblock %}
+
+
+
+{% block content %}
+<div class="container mt-3">
+  <div class="row">
+      <div class="col-3">
+          {% include 'partials/_categories.html' %}
+      </div>
+      <div class="col-9">
+        <h1>Anasayfa</h1>
+        <hr>
+        {% for blog in blogs %}
+          {% include 'website/partials/_blog.html' %}
+        {%endfor %}
+        
+        
+         
+      </div>
+      
+  </div>
+</div>
+
+{% endblock %}
+
+{% block js_files %} 
+  <script src="{% static 'website/js/script.js' %}"></script>
+{% endblock %}
